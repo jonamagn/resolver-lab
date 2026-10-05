@@ -41,19 +41,19 @@ services:
       resolver-lab:
         ipv4_address: 10.0.53.3
 #===============================================
-  powerdns:
-    image: resolver-lab/powerdns:5.2.2
-    build:
-      context: powerdns
-      args:
-        VERSION: 5.2.2
-    container_name: powerdns
-    environment:
-      CONFIG: default
-    tty: true
-    networks:
-      resolver-lab:
-        ipv4_address: 10.0.53.4
+#  powerdns:
+#    image: resolver-lab/powerdns:5.2.2
+#    build:
+#      context: powerdns
+#      args:
+#        VERSION: 5.2.2
+#    container_name: powerdns
+#    environment:
+#      CONFIG: default
+#    tty: true
+#    networks:
+#      resolver-lab:
+#        ipv4_address: 10.0.53.4
 #===============================================
   egress:
     image: resolver-lab/unbound:1.23.0
