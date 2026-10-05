@@ -27,7 +27,6 @@ to build a distinct open-source DNS resolver:
 - [Unbound](https://nlnetlabs.nl/projects/unbound/about/) (/unbound) [10.0.53.1]
 - [Bind](https://www.isc.org/download/#BIND) (/bind) [10.0.53.2]
 - [Knot](https://www.knot-resolver.cz/) (/knot) [10.0.53.3]
-- [PowerDNS](https://www.powerdns.com/powerdns-recursor) (/powerdns) [10.0.53.4]
 
 We have added a build.sh script which takes the software and the version as parameters:
 ```bash
@@ -72,7 +71,6 @@ You can also run the following to use host names in /etc/hosts:
 sudo sh -c 'cat hosts >> /etc/hosts'
 docker compose up -d
 dig @unbound.resolver www.example.com +short
-dig @powerdns.resolver www.example.com +short
 dig @bind.resolver www.example.com +short
 dig @knot.resolver www.example.com +short
 docker compose down

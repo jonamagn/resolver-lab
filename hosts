@@ -2,7 +2,6 @@
 10.0.53.1   unbound.resolver
 10.0.53.2   bind.resolver
 10.0.53.3   knot.resolver
-10.0.53.4   powerdns.resolver
 10.0.53.5   egress.resolver
 10.0.53.53  ns1.lab
 10.0.53.6   fpdns.lab
