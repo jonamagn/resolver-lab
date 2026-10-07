@@ -17,3 +17,6 @@ newqmin         IN  A   10.0.53.9
 
 polar           IN  NS  polar.lab.
 polar           IN  A   10.0.53.11
+
+iodine          IN  NS  iodine.lab.
+iodine          IN  A   10.0.53.12

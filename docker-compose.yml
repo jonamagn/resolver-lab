@@ -122,6 +122,50 @@ services:
       resolver-lab:
         ipv4_address: 10.0.53.53
 #===============================================
+  iodine-server:
+    image: resolver-lab/iodine.lab
+    build:
+      context: iodine.lab
+      args:
+        VERSION: 0.7.0
+    container_name: iodine-server
+    environment:
+      ROLE: server
+      TOPDOMAIN: iodine.lab
+      TUNNEL_IP: 172.16.53.1
+      PASSWORD: secretpassword
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    tty: true
+    networks:
+      resolver-lab:
+        ipv4_address: 10.0.53.12
+  #===============================================
+  iodine-client:
+    image: resolver-lab/iodine.lab
+    build:
+      context: iodine.lab
+      args:
+        VERSION: 0.7.0
+    container_name: iodine-client
+    environment:
+      ROLE: client
+      SERVER_IP: 10.0.53.1 #10.0.53.12
+      TOPDOMAIN: iodine.lab
+      PASSWORD: secretpassword
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    tty: true
+    depends_on:
+      - iodine-server
+    networks:
+      resolver-lab:
+        ipv4_address: 10.0.53.13
+#===============================================
 networks:
   resolver-lab:
     driver: bridge
