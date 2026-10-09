@@ -20,3 +20,6 @@ polar           IN  A   10.0.53.11
 
 iodine          IN  NS  iodine.lab.
 iodine          IN  A   10.0.53.12
+
+dnscat2         IN  NS  dnscat2.lab.
+dnscat2         IN  A   10.0.53.20
